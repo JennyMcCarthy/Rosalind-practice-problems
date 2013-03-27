@@ -1,0 +1,24 @@
+#!/usr/bin/perl -w
+#counting lines of file dividing by number
+#Jenny McCarthy
+
+#DNA file to be counted
+$dna_filename = <STDIN>;
+
+
+#open the file to be counted
+unless ( open(DNAFILE, $dna_filename) ) {
+	print "Cannot open file \"$dna_filename\"\n\n";
+	exit;
+}
+#stat count of lines at 0
+$lines = 0;
+
+#$dna_filename = <STDIN>;
+#$lines = 0;
+#open (FILE, $ARGV[0]) or die "cannot open '$ARGV[0]' : $!";
+$lines++ while (<DNAFILE>);
+	close DNAFILE;
+	print "lines\n";
+	exit;
+	
