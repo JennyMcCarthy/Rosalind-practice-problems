@@ -12,7 +12,11 @@ my $count_of_A =0; #Count of lines with A at 10th position
 my $count_of_both = 0; #count of lines with T and A
 my $lines; #total number of lines in the file
 #open the file and start the string
+<<<<<<< HEAD
 open (FILE, $ARGV[0]) or die "cannot open $ARGV [0] : $!";
+=======
+open (FILE, $ARGV[0]) or die "cannot open $ARGV[0] : $!";
+>>>>>>> f41290753255ac95ff51f896431cb12ec5055f41
 while ($string = <FILE>) {
 	if ($string =~ m/^T/) {
 	
