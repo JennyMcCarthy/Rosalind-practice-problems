@@ -11,8 +11,8 @@ my $count_of_lines = 0; #Counter
 my $count_of_A =0; #Count of lines with A at 10th position
 my $count_of_both = 0; #count of lines with T and A
 #open the file and start the string
-open (FILE, $ARGV[0]) or die "cannot open $ARGV [0] : $!";
-for $string (<FILE>) {
+open (FILE, $ARGV[0]) or die "cannot open $ARGV[0] : $!";
+while ($string = <FILE>) {
 	if ($string =~ m/^T/) {
 	
 		$count_of_lines++; 
