@@ -10,9 +10,10 @@ my $string; #Line with T at the beginning
 my $count_of_lines = 0; #Counter 
 my $count_of_A =0; #Count of lines with A at 10th position
 my $count_of_both = 0; #count of lines with T and A
+my $lines; #total number of lines in the file
 #open the file and start the string
 open (FILE, $ARGV[0]) or die "cannot open $ARGV [0] : $!";
-for $string (<FILE>) {
+while ($string = <FILE>) {
 	if ($string =~ m/^T/) {
 	
 		$count_of_lines++; 
@@ -24,11 +25,25 @@ for $string (<FILE>) {
 	if ($string =~ /^T........A/) {
 		$count_of_both++;
 	}
+	$lines++; {
+	}
 }
 close (FILE);
 print "The count of lines with T $count_of_lines\n";
 print "The count of lines with A $count_of_A\n";
 print "The count of lines with T and A $count_of_both\n";
+print "The total number of lines $lines\n";
+#percentages of T at beginning
+my $Tpercent = $count_of_lines /$lines; #percent of T
+#percent of A at 10th postion
+my $Apercent = $count_of_A /$lines; #percent of A
+#percent of both T and A
+my $bothpercent = $count_of_both /$lines; #percent of both A and T
+#print the percents
+print "percent of T $Tpercent\n";
+print "percent of A $Apercent\n";
+print "percent of both $bothpercent\n";
+
 
 
 
