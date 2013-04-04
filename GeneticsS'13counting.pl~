@@ -1,24 +1,20 @@
 #!/usr/bin/perl -w
 #counting lines of file dividing by number
 #Jenny McCarthy
+use strict;
+my $dna_filename; #file name
+my $lines; #lines of textfile
 
-#DNA file to be counted
-$dna_filename = <STDIN>;
-
-
-#open the file to be counted
-unless ( open(DNAFILE, $dna_filename) ) {
-	print "Cannot open file \"$dna_filename\"\n\n";
-	exit;
-}
 #stat count of lines at 0
 $lines = 0;
 
-#$dna_filename = <STDIN>;
-#$lines = 0;
-#open (FILE, $ARGV[0]) or die "cannot open '$ARGV[0]' : $!";
-$lines++ while (<DNAFILE>);
-	close DNAFILE;
-	print "lines\n";
-	exit;
+#Open the file and start a count at 0 for every line add 1
+open (FILE, $ARGV[0]) or die "cannot open $ARGV[0] : $!";
+ 
+while (<FILE>){
+	$lines++;
+}
+close FILE;
+print "$lines\n";
+exit;
 	

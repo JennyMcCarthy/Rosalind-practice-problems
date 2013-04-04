@@ -4,7 +4,7 @@
 use strict;
 my $dna_filename; #file name
 my $lines; #lines of textfile
-
+my $numseq; #lines divided by 4
 #stat count of lines at 0
 $lines = 0;
 
@@ -16,5 +16,7 @@ while (<FILE>){
 }
 close FILE;
 print "$lines\n";
+$numseq = $lines /4;
+print "$numseq\n";
 exit;
 	
