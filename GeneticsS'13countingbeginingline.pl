@@ -11,6 +11,11 @@ my $count_of_lines = 0; #Counter
 my $count_of_A =0; #Count of lines with A at 10th position
 my $count_of_both = 0; #count of lines with T and A
 my $lines; #total number of lines in the file
+my $numseq; #= $lines /4; #total number of seqeunces
+my $Tpercent; #= $count_of_lines /$numseq; #percent of T
+my $Apercent; #= $count_of_A /$numseq; #percent of A
+my $bothpercent; #= $count_of_both /$numseq; #percent with both A and T
+
 #open the file and start the string
 
 open (FILE, $ARGV[0]) or die "cannot open $ARGV [0] : $!";
@@ -34,12 +39,14 @@ print "The count of lines with T $count_of_lines\n";
 print "The count of lines with A $count_of_A\n";
 print "The count of lines with T and A $count_of_both\n";
 print "The total number of lines $lines\n";
+$numseq = $lines /4; #sequences in the file total/4
+print "number of sequences $numseq\n";
 #percentages of T at beginning
-my $Tpercent = $count_of_lines /$lines; #percent of T
+$Tpercent = $count_of_lines /$numseq; #percent of T
 #percent of A at 10th postion
-my $Apercent = $count_of_A /$lines; #percent of A
+$Apercent = $count_of_A /$numseq; #percent of A
 #percent of both T and A
-my $bothpercent = $count_of_both /$lines; #percent of both A and T
+$bothpercent = $count_of_both /$numseq; #percent of both A and T
 #print the percents
 print "percent of T $Tpercent\n";
 print "percent of A $Apercent\n";
