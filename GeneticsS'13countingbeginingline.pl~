@@ -1,0 +1,42 @@
+#!/usr/bin/perl -w
+#count lines that start with a t
+#Jenny McCarthy
+
+#use strict;
+#my $string; #Line with T at the beginning
+#my $count; #number of time T occurs at the begining of a line
+
+#start counts of lines at 0
+#$count_of_lines = 0;
+
+#open the file and start the string
+open (FILE, $ARGV[0]) or die "cannot open $ARGV [0] : $!";
+for $string (<FILE>) {
+	if ($string =~ m/^T/) {
+	
+	$string++; 
+		print $string++;
+	}
+}
+close (FILE);
+
+
+
+
+
+
+
+
+#Give variables names
+#if ($string =~ m/^T/) { print "yes"; }
+#$count = $string++
+#open the file to be counted
+#open (FILE, $ARGV[0]) or die "cannot open $ARGV[0] : $!";
+
+#while (<FILE>) {
+#	if ($string =~ m/^T/);
+#}
+#close FILE;
+#print "$count\n";
+#exit;
+
