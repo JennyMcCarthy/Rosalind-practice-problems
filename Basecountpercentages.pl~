@@ -1,0 +1,10 @@
+#!/usr/bin/perl -w
+#Counting each base and getting the percentage
+#Jenny McCarthy
+
+#open the file
+open (file, $ARGV[0]) or die "Cannot Open $ARGV [0] : $!";
+while ($base = <FILE>) {
+	if ($base eq 'A') {
+++$count_of_A;
+}
